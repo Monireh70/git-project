@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
 import "./main.css"
 import Profile from './pages/Profile';
