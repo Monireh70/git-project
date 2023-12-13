@@ -1,5 +1,3 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
 
 function Profile() {
   return (
@@ -33,9 +31,74 @@ function Profile() {
       </header>
 
       <div className="main">
-        <div className="sidebar">this is sidebar</div>
-        <div className="activity">this is activity
-        <Button variant="contained">Hello world</Button>
+        <div className="sidebar">
+          <div className="profile-img">
+            <img src="https://avatars.githubusercontent.com/u/138359970?v=4" alt="" />
+          </div>
+
+          <div className="info">
+            <div className="name">Monnireh Taghilou</div>
+            <div className="username">Monireh-70</div>
+          </div>
+
+          <div className="actions">
+            <button>Follow</button>
+          </div>
+          
+          <div className="bio">
+            Front End Developer
+          </div>
+
+          <div className="subscribers">
+            <a href="#">10 Followers</a>
+            <a href="#">20 Followings</a>
+          </div>
+
+          <div className="links">
+            <a href="https://www.zedc.ir">
+            https://www.zedc.ir
+            </a>
+          </div>
+
+
+        </div>
+        <div className="activity">
+
+       
+    <div className="pinned-repositories">
+    <h3> Pinned
+      </h3>
+    <div className="repositories">
+    <div className="repository">
+        <div className="title">
+          <a href="#">
+          Pinned
+          </a>
+        </div>
+        <div className="descriptopn">Monireh Taghilou's Personal Blog </div>
+        <div className="repo-info"> <div>Javascript</div>
+        <div>1 Star</div>
+        <div>1 Fork</div>
+        </div>
+      </div>
+
+      <div className="repository">
+        <div className="title">
+          <a href="#">
+          Test Repository
+          </a>
+        </div>
+        <div className="descriptopn">Monireh Taghilou's Personal Blog </div>
+        <div className="repo-info"> <div>Javascript</div>
+        <div>1 Star</div>
+        <div>1 Fork</div>
+        </div>
+      </div>
+
+    </div>
+
+
+    </div>
         </div>
       </div>
     </div>

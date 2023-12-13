@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
-}
+ }
+ body{
+  background-color: #111;
+ }
 a {
   text-decoration: none;
   color: #333;
@@ -37,20 +40,97 @@ a:hover{
   max-width: 1028px;
   width: 100%;
   margin: auto;
+  color:#fff;
 }
 
 .main .sidebar {
   width: 25%;
+  color:#fff;
 }
+
+.main .sidebar a{
+  color:#fff;  
+}
+
+.main .sidebar a:hover{
+  color:#ccc; 
+}
+
+.profile-img{
+  border-radius: 50%;
+  border:1px solid #ccc;
+  overflow: hidden;
+}
+
+.profile-img img{
+  width:100%;
+ }
+
+ .info{
+  padding: 8px 0;
+ }
+ .info .name{
+  font-size: 20px;
+ }
+
+.info .username{
+  color:#ccc;
+}
+
+.actions button{
+  background-color: #999;
+  width:100%;
+  color:#ccc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  
+}
+
+.bio{
+  padding: 16px 0 ;
+}
+
+.links{
+  padding: 16px 0px;
+}
+
+
 
 .main .activity {
   width: 75%;
+  padding-left: 24px;
 }
- 
+
+.main .pinned-repositories .repositories{
+  display: flex;
+justify-content: space-between;
+
+}
+.main .pinned-repositories .repositories .repository{
+  width: 49%;
+  border:1px solid #ccc;
+  padding: 32px ;
+  border-radius: 8px;
+  font-size: 14px;
+
+}
+
+.main .pinned-repositories .repositories .repository .title a {
+color:aqua
+}
+.main .pinned-repositories .repositories .repository .descriptopn{
+  padding: 16px 0px;
+}
+.main .pinned-repositories .repositories .repository .repo-info{
+  display: flex;
+}
+.main .pinned-repositories .repositories .repository .repo-info div{
+padding-right: 8px;
+}
 /* Botton */
 .button{
     padding: 4px;
 }
 .button.outlined{
     border: 1px solid #ccc;
-}
+} 
