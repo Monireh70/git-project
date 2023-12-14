@@ -1,12 +1,22 @@
-import React from "react";
-import { getUser } from "../api/user";
+import React, { useState } from "react";
+import { getUser, User } from "../api/user";
 import {useEffect} from "react";
 
 function Profile() {
 
-  useEffect(()=>
-  {getUser().then(console.log)}
-    , [])
+  const [user,setUser] = useState<User>();
+  useEffect( () => {getUser().then((data) =>{ setUser(data) })}, []);
+
+  // const profile_picture = user ? user.avatar_url :undefined; //
+  const profile_picture = user?.avatar_url ;
+  const name = user?.name;
+  const bio = user?.bio;
+  const login = user?.login;
+
+
+
+
+  console.log(user);
   return (
     <div className="profile">
       <header className="nav">
@@ -40,12 +50,12 @@ function Profile() {
       <div className="main">
         <div className="sidebar">
           <div className="profile-img">
-            <img src="https://avatars.githubusercontent.com/u/138359970?v=4" alt="" />
+            <img src={profile_picture} alt="" />
           </div>
 
           <div className="info">
-            <div className="name">Monnireh Taghilou</div>
-            <div className="username">Monireh-70</div>
+            <div className="name">{name}</div>
+            <div className="username">{login}</div>
           </div>
 
           <div className="actions">
@@ -53,7 +63,7 @@ function Profile() {
           </div>
           
           <div className="bio">
-            Front End Developer
+            {bio}
           </div>
 
           <div className="subscribers">

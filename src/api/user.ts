@@ -1,21 +1,33 @@
-import {Octokit} from "octokit";
+import { Octokit } from "octokit";
 
-const token="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"
+const token = "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";
+const username = "shahramardalan";
 
-async function getUser(){
+export interface User {
+    login: string
+  avatar_url: string ;
+  name: string | null;
+  company: string | null;
+  bio: string | null;
+  followers: number | null;
+  following: number | null;
+}
+async function getUser(): Promise<User> {
+  const octokit = new Octokit({
+    auth: token,
+  });
 
-// Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
-const octokit = new Octokit({ 
-    auth: token });
-
-const response = await octokit.request("GET/users/{username}",{
-    username:"USERNAME",
-    Headers:{
-        "X-GitHub-Api-Version":"2022-11-28",
+  const response = await octokit.request("GET /users/{username}", {
+    username: username,
+    headers: {
+      "X-GitHub-Api-Version": "2022-11-28",
     },
-})
+  });
+  console.log("user");
+  console.log({ response });
 
-return response.data;
+  //response.data
+  return response.data;
 }
 
-export {getUser};
+export { getUser };
