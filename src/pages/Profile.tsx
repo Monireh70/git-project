@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { getUser, User } from "../api/user";
+import { getAllRepo, RepoInterface } from "../api/repositories"
 import {useEffect} from "react";
 
 function Profile() {
 
   const [user,setUser] = useState<User>();
   useEffect( () => {getUser().then((data) =>{ setUser(data) })}, []);
+
+
+  const [Repo,setRepo] = useState();
+  // useEffect( () => {getAllRepo().then((data) =>{ setRepo(data) })}, []);
 
   // const profile_picture = user ? user.avatar_url :undefined; //
   const profile_picture = user?.avatar_url ;
@@ -83,13 +88,13 @@ function Profile() {
 
        
     <div className="pinned-repositories">
-    <h3> Pinned
+    <h3> Popular Repositories
       </h3>
     <div className="repositories">
     <div className="repository">
         <div className="title">
           <a href="/">
-          Pinned
+          Test Repository
           </a>
         </div>
         <div className="descriptopn">Monireh Taghilou's Personal Blog </div>

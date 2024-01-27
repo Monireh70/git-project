@@ -1,11 +1,11 @@
 import { Octokit } from "octokit";
+import { token ,username } from "../const";
 
-const token = "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";
-const username = "shahramardalan";
+
 
 export interface User {
-    login: string
-  avatar_url: string ;
+  login: string;
+  avatar_url: string;
   name: string | null;
   company: string | null;
   bio: string | null;
